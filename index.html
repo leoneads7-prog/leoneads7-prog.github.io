@@ -411,6 +411,419 @@
         <h2 class="section-title">Get in Touch</h2>
         <div class="contact-wrapper">
             <div class="contact-info">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leone ADS | View, Click & Earn</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --surface-color: #1e1e1e;
+            --primary-color: #bb86fc;
+            --text-color: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-color: #03dac6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            z-index: 1000;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 120px 50px 80px 50px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+
+        /* Home Section */
+        #home {
+            text-align: center;
+            align-items: center;
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #home p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: #121212;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: opacity 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background-color: var(--surface-color);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .about-img {
+            flex: 1;
+            background-color: var(--surface-color);
+            height: 350px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            border: 1px dashed #444;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 30px;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--surface-color);
+            border: 1px solid #333;
+            border-radius: 4px;
+            color: var(--text-color);
+            font-family: inherit;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #0d0d0d;
+            color: var(--text-muted);
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+            section {
+                padding: 100px 20px 60px 20px;
+            }
+            .about-content, .contact-wrapper {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+
+‎‎<script src="https://pl30744220.effectivecpmnetwork.com/22/f9/49/22f949c3176088ddb9c236965bf14bbf.js"></script>
+‎
+‎
+‎<script async="async" data-cfasync="false" src="https://pl30744222.effectivecpmnetwork.com/a9826a4bf46bfdbda37b8da51897e3de/invoke.js"></script>
+‎<div id="container-a9826a4bf46bfdbda37b8da51897e3de"></div>
+‎
+    ‎<script src="https://pl30744223.effectivecpmnetwork.com/c7/37/0d/c7370dc8cbb788363cc30a7b10ea9799.js"></script>
+‎
+‎<a href="https://www.effectivecpmnetwork.com/uyz4szpns?key=5d89825c90f7983709f4838a2cfe0c4a" target="_blank" class="btn">
+
+    ‎<script>
+‎  atOptions = {
+‎    'key' : 'c37c2b426e4aeb9380202269c486c2f5',
+‎    'format' : 'iframe',
+‎    'height' : 60,
+‎    'width' : 468,
+‎    'params' : {}
+‎  };
+‎</script>
+‎<script src="https://www.highperformanceformat.com/c37c2b426e4aeb9380202269c486c2f5/invoke.js"></script>
+‎
+‎<script>
+‎  atOptions = {
+‎    'key' : 'bdf6d6cb487f4589451f9f12a05c9b4e',
+‎    'format' : 'iframe',
+‎    'height' : 250,
+‎    'width' : 300,
+‎    'params' : {}
+‎  };
+‎</script>
+‎<script src="https://www.highperformanceformat.com/bdf6d6cb487f4589451f9f12a05c9b4e/invoke.js"></script>
+‎
+‎<script>
+‎  atOptions = {
+‎    'key' : '0c726bf505b404a44d5048f5bf9f4ab3',
+‎    'format' : 'iframe',
+‎    'height' : 600,
+‎    'width' : 160,
+‎    'params' : {}
+‎  };
+‎</script>
+‎<script src="https://www.highperformanceformat.com/0c726bf505b404a44d5048f5bf9f4ab3/invoke.js"></script>
+‎
+‎<script>
+‎  atOptions = {
+‎    'key' : '027f83bb242a76b0c7059b765f239e8a',
+‎    'format' : 'iframe',
+‎    'height' : 300,
+‎    'width' : 160,
+‎    'params' : {}
+‎  };
+‎</script>
+‎<script src="https://www.highperformanceformat.com/027f83bb242a76b0c7059b765f239e8a/invoke.js"></script>
+‎
+‎<script>
+‎  atOptions = {
+‎    'key' : '992b9788b38f1631390ce8a269ce9507',
+‎    'format' : 'iframe',
+‎    'height' : 50,
+‎    'width' : 320,
+‎    'params' : {}
+‎  };
+‎</script>
+‎<script src="https://www.highperformanceformat.com/992b9788b38f1631390ce8a269ce9507/invoke.js"></script>
+‎
+‎<script>
+‎  atOptions = {
+‎    'key' : '9536e4b9677252a1e1cececf283c53af',
+‎    'format' : 'iframe',
+‎    'height' : 90,
+‎    'width' : 728,
+‎    'params' : {}
+‎  };
+‎</script>
+‎<script src="https://www.highperformanceformat.com/9536e4b9677252a1e1cececf283c53af/invoke.js"></script>
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+‎
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <a href="#home" class="logo">Leone ADS</a>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Empowering Your Future Through Digital Earnings</h1>
+        <p>Welcome to Leone ADS — the premier platform built on empowerment and financial growth in Sierra Leone. Register today, dive into our simple ad-viewing and ad-clicking task system, and turn your spare time into real monthly income. Whether you work from home or at our office, your effort always pays off!</p>
+        <a href="#services" class="btn">Discover How It Works</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">Our Flexible Working Services</h2>
+        <p style="color: var(--text-muted);">Leone ADS proudly offers both work-from-home and office options, creating a relaxed, easy way to experience making money right in town.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Work From Home & Office</h3>
+                <p>The first company in Sierra Leone to offer both home and office options simultaneously. Log in from home wherever you are, or visit our professional office environment for a focused, relaxed workspace.</p>
+            </div>
+            <div class="service-card">
+                <h3>Standard Tasks & Payouts ($40/mo)</h3>
+                <p>Fulfill your daily requirement of 1,000 views or clicks consistently for a month, and receive a guaranteed payout of $40 at the end of the month.</p>
+            </div>
+            <div class="service-card">
+                <h3>Extended Hours & Higher Tiers</h3>
+                <p>Want to earn more? Take on extended tasks! Complete 2,000 views or clicks daily for a month to earn $80, or scale up to 3,000 daily for even greater rewards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Leone ADS</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>At Leone ADS, we believe in true empowerment and transforming how people make money in town. After registering on our platform, users can seamlessly earn by either viewing ads or clicking ads—giving you complete flexibility depending on your preference.</p>
+                <p>Whether you choose to view or click 1,000 times a day from the comfort of your home or at our dedicated office, your daily progress builds toward your end-of-month earnings. If you decide to go above and beyond with extended hours to hit 2,000, 3,000, or more daily views and clicks, your payout increases proportionally. We are proud to bring this innovative financial opportunity to Sierra Leone.</p>
+              </div>
+            <div class="about-img">
+                <span>[Leone ADS Workspace & Community]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
                 <p>Ready to start your earning journey with Leone ADS? Reach out to our team with any registration questions, office inquiries, or support needs.</p>
                 <p><strong>Email:</strong> leoneads7@gmail.com</p>
                 <p><strong>Location:</strong> Freetown, Sierra Leone</p>
@@ -425,3 +838,4 @@
 
 </body>
 </html>
+
